@@ -76,15 +76,6 @@ def getMeasurementFilenames(pcaFilePath):
         return fileslist
 
 
-def getfilenamestarts(correctfiles):
-    starts = []
-    for file in correctfiles:
-        start = file.strip('\'').split('_')[0]
-        if start not in starts:
-            starts.append(start)
-    return starts
-
-
 def binningFactor(timeResolution):
     switcher = {
         '250': 1,
