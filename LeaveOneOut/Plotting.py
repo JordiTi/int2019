@@ -12,8 +12,7 @@ def plotccd(objectid, accuracylist, test_obs, objecttype, targetdir, colorpath):
     accuracy = []
 
     # Open colorfile and append softness/hardness/intensity/accuracy to lists
-    with open('/net/Virgo01/data/users/timmermans/colors/' +
-              str(objectid).strip() + ".color", 'r') as colorfile:
+    with open(colorpath + str(objectid).strip() + ".color", 'r') as colorfile:
         for line in colorfile.readlines():
             time, softcolor, serror, hardcolor, herror, intensity, ierror, obsid = line.split()
             test_indices = [i for i, x in enumerate(test_obs) if x == obsid]
@@ -48,6 +47,7 @@ def plotccd(objectid, accuracylist, test_obs, objecttype, targetdir, colorpath):
         plt.savefig(targetdir + str(objectid) + ".png")
         plt.close(1)
 
+
 # Plot the colorcolor diagram
 def plotColorColor(colorpath, objectid, objecttype):
 
@@ -78,7 +78,7 @@ def plotColorColor(colorpath, objectid, objecttype):
             plt.scatter(soft, hard, s=markersize,  color='royalblue')
             plt.xlabel('soft')
             plt.ylabel('hard')
-        plt.savefig(str(objectid) + "222.png")
+        plt.savefig(str(objectid) + ".png")
         plt.close(1)
 
 

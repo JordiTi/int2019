@@ -21,7 +21,7 @@ def trainRF(train_data, test_data, train_labels, test_labels, objectid,
     y_pred_general = classifier.predict(test_data)
 
     # Save results
-    with open('./trainresults/RF' + str(rebinning) + 'cut3.txt', 'a') as results:
+    with open('./trainresults/RF' + str(rebinning) + '.txt', 'a') as results:
         results.write(str(objectid) + '\n\n' + str(confusion_matrix(test_labels, y_pred_general)) + '\n\n'
                       + str(accuracy_score(test_labels, y_pred_general)) + '\n'
                       + '_______________________________________' + '\n\n'
@@ -77,7 +77,7 @@ def trainNN(train_data, test_data, train_labels, test_labels, objectid, label, r
         print('Confusion Matrix: \n\n', tf.Tensor.eval(con_mat, feed_dict=None,
                                                        session=None))
     # Save data
-    with open('./trainresults/NN' + str(rebinning) + '2.txt', 'a') as results:
+    with open('./trainresults/NN' + str(rebinning) + '.txt', 'a') as results:
         results.write(str(objectid) + '\n\n' + str(confusion_matrix(test_labels,
             y_pred)) + '\n\n' +
             str(accuracy) + '\n' + '________________________\n')

@@ -119,8 +119,8 @@ def getgtipath(objidpath):
 
 
 def main():
-    # directorystructure of main => NS/obsid/pca,fmi,fipc/measfiles
-    mainDirectory = "/export/data/jordit/data/BH"
+
+    mainDirectory = "./maindir"
     for objectid in os.listdir(mainDirectory):
         gtipath = getgtipath(mainDirectory + '/' + objectid)
 
@@ -151,6 +151,5 @@ def main():
                                     if measfile.startswith(shortname):
                                         metafile.write(measfile + '\n')
                         createPowerSpectrum(mainDirectory + '/' + objectid + '/' + obsid, gtipath)
-
 
 main()
