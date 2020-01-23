@@ -76,7 +76,7 @@ Before training make sure the data is structured in the following way:\
 Objecttype\
 |_ObjectID\
 |__All powerspectra of this objectID (containing only the powers and 1 power per row)\
-Also make sure there is a folder containing all .color files from color_analysis.
+Also make sure there is a folder containing all .color files from color_analysis in the form objectid.color
 
 Before training also make sure:
 - In LeaveOneOut.py change the nsPath and bhPath to the paths pointing at the Objecttype folder

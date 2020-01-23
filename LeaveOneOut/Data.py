@@ -8,7 +8,6 @@ def loaddata(nspath, bhpath):
 
     topdict = {"BH": [], "NS": []}
     datadict = {}
-    datalist = []
 
     print("Reading files...")
 
