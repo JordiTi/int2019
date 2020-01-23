@@ -1,8 +1,7 @@
 # User guide 
 ## Folder overview
 **CreatePowerSpectra:**\
-Scripts to create power spectra from files, structured the same as in
-<https://heasarc.gsfc.nasa.gov/FTP/rxte/data/archive/>
+Scripts to create power spectra from files
 
 **LeaveOneOut:**\
 Scripts to read data, train machine learning algorithms on it and plot the results.
