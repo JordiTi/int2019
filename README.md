@@ -6,7 +6,7 @@ Scripts to create power spectra from files
 **LeaveOneOut:**\
 Scripts to read data, train machine learning algorithms on it and plot the results.
 
-**Anserfiles:**\
+**Answerfiles:**\
 Contains the files needed to create power spectra.
 
 ## Function overview
@@ -24,7 +24,7 @@ createPowerSpectrum():
 From a path containing data and a path to the gti file, creates a power spectrum using WritePowerspectrum.sh.
 
 getgtipath():\
-Returns the gtipath if gtipath is in the folder of the object. 
+Returns the gtipath if gti file is in the folder of the object. 
 
 main():\
 From the path to all neutron star/black hole data, return powerspectra form files with the right mode and time 
@@ -69,6 +69,9 @@ mainpath\
 Now run Powerspectrum.py and powerspectra will be placed in the folders of the observations.
 
 ## How to train the machine learning algorithms
+Training machine learning algorithms is done with the scripts in the LeaveOneOut folder.\
+One source is taken out as test data, and is classified based on the training data that gets used.
+
 Before training make sure the data is structured in the following way:\
 Objecttype\
 |_ObjectID\
