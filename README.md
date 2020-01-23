@@ -1,15 +1,21 @@
 # User guide 
 ## Folder overview
+**Answerfiles:**\
+Contains the files needed to create power spectra.
+
 **CreatePowerSpectra:**\
 Scripts to create power spectra from files
 
 **LeaveOneOut:**\
 Scripts to read data, train machine learning algorithms on it and plot the results.
 
-**Answerfiles:**\
-Contains the files needed to create power spectra.
+**MakeGti:**\
+Scripts to make the gti files and put them in a seperate folder
 
 ## Function overview
+**In CreatePowerSpectra in WritePowerspectrum.sh**\
+Changes the input files for fft and xana, then runs fft_xte
+
 **In CreatePowerSpectra in Powerspectrum.py:**\
 findPcaFileName():\
 Finds the pca index file in the FMI file.
@@ -56,14 +62,28 @@ trainNN():\
 Trains neural network
 
 ## How to create power spectra 
-Creating powerspectra is done with the scripts in the CreatePowerSpectra folder. \
-Before running the Powerspectrum.py:
-- In WritePowerspectrum.sh replace the paths to the answerfiles with the right paths.
-- The data should be structured in the following way:\
-mainpath\
+Before creating the power spectra, good time interval (gti) files are needed. These are 
+created by the scripts in the MakeGti folder. These scripts also make files needed
+for plotting.
+
+In order to make the gti files, the data should be structured in the following way:\
+main folder (NS or BH) containing either all NS or all BH data.\
 |_Folders with objectid's\
 |__Folders with observations for that objectid
-- Change the path in the main() function to the main path
+
+First run makedirs.sh with a target directory flag. This target directory
+is the path to the main folder. The script creates colorBH or colorNS folders.\
+Second run coloranalysis.sh with a target directory flag. Also this flag
+is the path to the main folder.\
+Before copying the color files to a seperate folder make sure to change the following:\
+In copycolor.py change the colordestination to the ./color/ folder and change 
+the maindirectory path to the main folder. \
+Finally run copycolor.py. The color files are now moved to the right folder.
+
+Creating powerspectra is done with the scripts in the CreatePowerSpectra folder. \
+Before running the Powerspectrum.py:
+- In WritePowerspectrum.sh, replace the paths to the answerfiles with the right paths.
+- In Powerspectrum.py, change the path in the main() function to the main path
 - Make sure the gti file is in the folder of the objectid
 
 Now run Powerspectrum.py and powerspectra will be placed in the folders of the observations.

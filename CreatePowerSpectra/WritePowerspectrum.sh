@@ -20,6 +20,8 @@ sed -i "12s/.*/${3}.tra/" ./fftans.txt
 # Change binning factor
 sed -i "13s/.*/${4}/" ./fftans.txt
 
+fft_xte < ./fftans.txt
+
 echo "FFT done"
 
 # Change input filename

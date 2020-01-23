@@ -4,6 +4,6 @@
 targetdir=$1
 for d in $targetdir*/ ; do
         cd $d
-        color_analysis < /export/data/jordit/code/bashscripts/colorans.txt
+        color_analysis < ./colorans.txt
 done
 
